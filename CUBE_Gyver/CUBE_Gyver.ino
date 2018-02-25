@@ -1,6 +1,6 @@
 /*
    Светодиодный куб 16x16 на Arduino NANO и сдвиговых регистрах 74HC595
-   
+
    Разработал VECT, модифицировал AlexGyver
    http://AlexGyver.ru/LEDcube/
    https://github.com/AlexGyver/GyverLibs
@@ -11,7 +11,7 @@
 #define INVERT_X 0    // инвертировать по горизонтали (если текст не читается)
 
 // текст для режима текста
-String disp_text = "AlexGyver xyz";
+String disp_text = "HELLO WORLD!";
 
 #define XAXIS 0
 #define YAXIS 1
@@ -79,6 +79,11 @@ void setup() {
   randomSeed(analogRead(0));
   digitalWrite(GREEN_LED, HIGH);
 
+  butt1.setIncrStep(5);         // настройка инкремента, может быть отрицательным (по умолчанию 1)
+  butt1.setIncrTimeout(100);    // настрйока интервала инкремента (по умолчанию 800 мс)
+  butt2.setIncrStep(-5);        // настройка инкремента, может быть отрицательным (по умолчанию 1)
+  butt2.setIncrTimeout(100);    // настрйока интервала инкремента (по умолчанию 800 мс)
+
   currentEffect = TEXT;
   changeMode();
 }
@@ -97,9 +102,13 @@ void loop() {
     if (currentEffect < 0) currentEffect = TOTAL_EFFECTS - 1;
     changeMode();
   }
-
-  if (butt1.isHolded()) modeTimer += 30;
-  if (butt2.isHolded()) modeTimer -= 30;
+  
+  if (butt1.isIncr()) {                                 // если кнопка была удержана (это для инкремента)
+    modeTimer = butt1.getIncr(modeTimer);               // увеличивать/уменьшать переменную value с шагом и интервалом
+  }
+  if (butt2.isIncr()) {                                 // если кнопка была удержана (это для инкремента)
+    modeTimer = butt2.getIncr(modeTimer);               // увеличивать/уменьшать переменную value с шагом и интервалом
+  }
 
   switch (currentEffect) {
     case RAIN: rain(); break;
