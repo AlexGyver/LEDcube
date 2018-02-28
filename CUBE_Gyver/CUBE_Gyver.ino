@@ -11,7 +11,7 @@
 #define INVERT_X 0    // инвертировать по горизонтали (если текст не читается)
 
 // текст для режима текста
-String disp_text = "HELLO WORLD!";
+String disp_text = "AlexGyver SHOW  SUBSCRIBE!";
 
 #define XAXIS 0
 #define YAXIS 1
