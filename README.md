@@ -29,10 +29,10 @@
 + Весь проект на EasyEDA [ссылка](https://easyeda.com/beragumbo/LED_Cube-8937fd8460054d639d93736e35345182)
 + Печатная плата из видео [ссылка](https://easyeda.com/editor#id=853291a217984a219d6b2c69a1e57860)
 + **Gerber файлы** в папке schemes в архиве проекта!
-Как вывести негатив для самодельной печатной платы я показывал в своих уроках по созданию печатных плат:
-- https://youtu.be/Rbf7AZkfNwQ
-- https://youtu.be/NJTeIALlztI
-- https://youtu.be/2sISKRJSLBo
++ Как вывести негатив для самодельной печатной платы я показывал в своих уроках по созданию печатных плат:
+	- https://youtu.be/Rbf7AZkfNwQ
+	- https://youtu.be/NJTeIALlztI
+	- https://youtu.be/2sISKRJSLBo
 ![SCHEME](https://github.com/AlexGyver/LEDcube/blob/master/schemes/scheme.jpg)
 
 <a id="chapter-3"></a>
