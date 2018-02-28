@@ -1,4 +1,4 @@
-![PROJECT_PHOTO](https://github.com/AlexGyver/FHTSpectrumAnalyzer/blob/master/proj_img.jpg)
+![PROJECT_PHOTO](https://github.com/AlexGyver/LEDcube/blob/master/proj_img.jpg)
 # Светодиодный куб 8x8x8 на Arduino
 * [Описание проекта](#chapter-0)
 * [Папки проекта](#chapter-1)
@@ -33,8 +33,7 @@ Gerber файлы в папке schemes в архиве проекта!
 - https://youtu.be/Rbf7AZkfNwQ
 - https://youtu.be/NJTeIALlztI
 - https://youtu.be/2sISKRJSLBo
-
-![SCHEME](https://github.com/AlexGyver/FHTSpectrumAnalyzer/blob/master/Schemes/simple.png)
+![SCHEME](https://github.com/AlexGyver/LEDcube/blob/master/schemes/scheme.jpg)
 
 <a id="chapter-3"></a>
 ## Материалы и компоненты
