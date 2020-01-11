@@ -39,26 +39,29 @@
 <a id="chapter-3"></a>
 ## Материалы и компоненты
 ### Ссылки оставлены на магазины, с которых я закупаюсь уже не один год
-* Arduino NANO с ногами http://ali.pub/2avsvp http://ali.pub/2avsw3
-* Arduino NANO без ног http://ali.pub/2avsyf http://ali.pub/2avsz7
+Arduino NANO 328p – искать
+* https://ali.ski/tI7blh
+* https://ali.ski/O4yTxb
+* https://ali.ski/6_rFIS
+* https://ali.ski/gb92E-
 * Светодиоды с длинными ногами 100 штук
-	+ Синие http://ali.pub/2avtgw
-	+ Розовые http://ali.pub/2avtha
-	+ Красные http://ali.pub/2avti2
-	+ Зелёные http://ali.pub/2avtj1
-	+ Жёлтые http://ali.pub/2avtk7
+* Синие https://ali.ski/EwPQQK
+* Розовые https://ali.ski/UKge78
+* Красные https://ali.ski/rseXA
+* Зелёные https://ali.ski/suEgC
+* Жёлтые https://ali.ski/1UQZP
 * Светодиоды по 10 штук
-	+ Синие http://ali.pub/2avtnp
-	+ Розовые http://ali.pub/2avtrz
-	+ Красные http://ali.pub/2avtw2
-	+ Жёлтые http://ali.pub/2avu14
-	+ Зелёные http://ali.pub/2avu1i
-* Сдвиговые регистры 74hc595n http://ali.pub/2avx3k
-* Транзисторы bd241c http://ali.pub/2avx20
-* Резисторы http://ali.pub/2avx54
-* Транзисторы TIP41C (на всякий случай) http://ali.pub/2avx63
-* Макетка 8 на 12 см http://ali.pub/2avxad
-* Гребёнка http://ali.pub/2avxen
+* Синие https://ali.ski/4J3IEE
+* Розовые https://ali.ski/WHmG7
+* Красные https://ali.ski/bWAD1r
+* Жёлтые https://ali.ski/NfCbf
+* Зелёные https://ali.ski/ZmnvJ
+* Сдвиговые регистры 74hc595n https://ali.ski/DnwaZ
+* Транзисторы bd241c https://ali.ski/H9eCm
+* Резисторы https://ali.ski/cgfwE
+* Транзисторы TIP41C (на всякий случай) https://ali.ski/I9hH_
+* Макетка 8 на 12 см https://ali.ski/e8SNm
+* Гребёнка https://ali.ski/4ujVt
 * Кнопки и стойки ищите в любых магазинах для радиолюбителей, так как у китайцев можно купить только мешок 100 штук!
 
 ## Вам скорее всего пригодится
