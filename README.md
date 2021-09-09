@@ -37,33 +37,6 @@
 ![SCHEME](https://github.com/AlexGyver/LEDcube/blob/master/schemes/scheme.jpg)
 
 <a id="chapter-3"></a>
-## Материалы и компоненты
-### Ссылки оставлены на магазины, с которых я закупаюсь уже не один год
-Arduino NANO 328p – искать
-* https://ali.ski/tI7blh
-* https://ali.ski/O4yTxb
-* https://ali.ski/6_rFIS
-* https://ali.ski/gb92E-
-* Светодиоды с длинными ногами 100 штук
-* Синие https://ali.ski/EwPQQK
-* Розовые https://ali.ski/UKge78
-* Красные https://ali.ski/rseXA
-* Зелёные https://ali.ski/suEgC
-* Жёлтые https://ali.ski/1UQZP
-* Светодиоды по 10 штук
-* Синие https://ali.ski/4J3IEE
-* Розовые https://ali.ski/WHmG7
-* Красные https://ali.ski/bWAD1r
-* Жёлтые https://ali.ski/NfCbf
-* Зелёные https://ali.ski/ZmnvJ
-* Сдвиговые регистры 74hc595n https://ali.ski/DnwaZ
-* Транзисторы bd241c https://ali.ski/H9eCm
-* Резисторы https://ali.ski/cgfwE
-* Транзисторы TIP41C (на всякий случай) https://ali.ski/I9hH_
-* Макетка 8 на 12 см https://ali.ski/e8SNm
-* Гребёнка https://ali.ski/4ujVt
-* Кнопки и стойки ищите в любых магазинах для радиолюбителей, так как у китайцев можно купить только мешок 100 штук!
-
 ## Вам скорее всего пригодится
 * [Всё для пайки (паяльники и примочки)](http://alexgyver.ru/all-for-soldering/)
 * [Недорогие инструменты](http://alexgyver.ru/my_instruments/)
