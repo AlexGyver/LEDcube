@@ -40,28 +40,28 @@
 ## Материалы и компоненты
 ### Ссылки оставлены на магазины, с которых я закупаюсь уже не один год
 Arduino NANO 328p – искать
-* https://ali.ski/tI7blh
-* https://ali.ski/O4yTxb
-* https://ali.ski/6_rFIS
-* https://ali.ski/gb92E-
+* https://ali.ski/FMDHwj
+* https://ali.ski/Di7z5o
+* https://ali.ski/c3IVB1
+* https://ali.ski/xafNfs
 * Светодиоды с длинными ногами 100 штук
-* Синие https://ali.ski/EwPQQK
-* Розовые https://ali.ski/UKge78
-* Красные https://ali.ski/rseXA
-* Зелёные https://ali.ski/suEgC
-* Жёлтые https://ali.ski/1UQZP
+* Синие https://ali.ski/PTU5l
+* Розовые https://ali.ski/u0lk7
+* Красные https://ali.ski/OrLNW
+* Зелёные https://ali.ski/ZyGmJ
+* Жёлтые https://ali.ski/rZo87
 * Светодиоды по 10 штук
-* Синие https://ali.ski/4J3IEE
-* Розовые https://ali.ski/WHmG7
-* Красные https://ali.ski/bWAD1r
-* Жёлтые https://ali.ski/NfCbf
-* Зелёные https://ali.ski/ZmnvJ
-* Сдвиговые регистры 74hc595n https://ali.ski/DnwaZ
-* Транзисторы bd241c https://ali.ski/H9eCm
-* Резисторы https://ali.ski/cgfwE
-* Транзисторы TIP41C (на всякий случай) https://ali.ski/I9hH_
-* Макетка 8 на 12 см https://ali.ski/e8SNm
-* Гребёнка https://ali.ski/4ujVt
+* Синие https://ali.ski/bmBPF
+* Розовые https://ali.ski/kEEX_
+* Красные https://ali.ski/kP---
+* Жёлтые https://ali.ski/_8GpZ
+* Зелёные https://ali.ski/fLY4i7
+* Сдвиговые регистры 74hc595n https://ali.ski/pYO_VA
+* Транзисторы bd241c https://ali.ski/Rv9f0M
+* Резисторы https://ali.ski/OWtOG
+* Транзисторы TIP41C (на всякий случай) https://ali.ski/68CDAi
+* Макетка 8 на 12 см https://ali.ski/2P3_uk
+* Гребёнка https://ali.ski/GwU9D
 * Кнопки и стойки ищите в любых магазинах для радиолюбителей, так как у китайцев можно купить только мешок 100 штук!
 
 ## Вам скорее всего пригодится
