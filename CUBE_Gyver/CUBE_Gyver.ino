@@ -223,8 +223,8 @@ void sinusFill() {
     clearCube();
     if (++pos > 10) pos = 0;
     for (uint8_t i = 0; i < 8; i++) {
+      uint8_t sinZ = 4 + ((float)sin((float)(i + pos) / 2) * 2);
       for (uint8_t j = 0; j < 8; j++) {
-        int8_t sinZ = 4 + ((float)sin((float)(i + pos) / 2) * 2);
         for (uint8_t y = 0; y < sinZ; y++) {
           setVoxel(i, y, j);
         }
@@ -244,8 +244,8 @@ void sinusThin() {
     clearCube();
     if (++pos > 10) pos = 0;
     for (uint8_t i = 0; i < 8; i++) {
+      uint8_t sinZ = 4 + ((float)sin((float)(i + pos) / 2) * 2);
       for (uint8_t j = 0; j < 8; j++) {
-        int8_t sinZ = 4 + ((float)sin((float)(i + pos) / 2) * 2);
         setVoxel(i, sinZ, j);
       }
     }
