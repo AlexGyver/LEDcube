@@ -48,7 +48,7 @@ String disp_text = "AlexGyver SHOW  SUBSCRIBE!";
 #define RED_LED 5
 #define GREEN_LED 7
 
-#define TOTAL_EFFECTS 14  // количество эффектов
+#define TOTAL_EFFECTS 16  // количество эффектов
 
 /*
    Эффекты по порядку:
@@ -75,9 +75,16 @@ String disp_text = "AlexGyver SHOW  SUBSCRIBE!";
 #define GLOW 5
 #define TEXT 6
 #define LIT 7
+#define SINUS_FILL 8
+#define SINUS_THIN 9
+#define WALKING 10
 #define SNAKE 11
 #define SHOOTER 12
 #define TUNNEL 13
+#define SINUS_WAVE_FILL 14
+#define SINUS_WAVE_THIN 15
+
+#define START_MODE TUNNEL
 
 // таймеры режимов
 #define RAIN_TIME 260
@@ -92,6 +99,8 @@ String disp_text = "AlexGyver SHOW  SUBSCRIBE!";
 #define SNAKE_TIME 700
 #define SHOOTER_TIME 400
 #define TUNNEL_TIME 300
+#define SINUS_WAVE_FILL_TIME 150
+#define SINUS_WAVE_THIN_TIME 150
 
 #include <SPI.h>
 #include "GyverButton.h"    // либа для кнопок
@@ -110,6 +119,7 @@ boolean showResult;
 byte lastMode;
 uint32_t millTimer;
 uint8_t cube[8][8];
+uint8_t sin_wave_cache_cube[12][8][8];
 int8_t currentEffect;
 uint16_t timer;
 uint16_t modeTimer;
@@ -133,8 +143,9 @@ void setup() {
   butt2.setStepTimeout(100);    // настрйока интервала инкремента (по умолчанию 800 мс)
 
   loading = true;
-  currentEffect = TUNNEL;
+  currentEffect = START_MODE;
   changeMode();
+  setupSinWave();
 }
 
 void loop() {
@@ -175,14 +186,33 @@ void loop() {
       }
       break;
     case LIT: lit(); break;
-    case 8: sinusFill(); break;
-    case 9: sinusThin(); break;
-    case 10: walkingCube(); break;
-    case 11: snake(); break;
-    case 12: shooter(); break;
-    case 13: tunnel(); break;
+    case SINUS_FILL: sinusFill(); break;
+    case SINUS_THIN: sinusThin(); break;
+    case WALKING: walkingCube(); break;
+    case SNAKE: snake(); break;
+    case SHOOTER: shooter(); break;
+    case TUNNEL: tunnel(); break;
+    case SINUS_WAVE_FILL: sinusWaveFill(); break;
+    case SINUS_WAVE_THIN: sinusWaveThin(); break;
   }
   renderCube();
+}
+
+void setupSinWave() {
+  uint8_t center_shift_x = 4;
+  uint8_t center_shift_z = 4;
+  int8_t sinY;
+  clearCube();
+  for (uint8_t p = 0; p <= 11; p++){
+    for (uint8_t x = 0; x < 8; x++) {
+      for (uint8_t z = 0; z < 8; z++) {
+        sinY = 4 + ((float)sin(
+          sqrt((x-center_shift_x) * (x-center_shift_x) + (z-center_shift_z) * (z-center_shift_z)) + p / 2
+        ) * 2);
+        sin_wave_cache_cube[p][x][z] = sinY;
+      }
+    }
+  }
 }
 
 void changeMode() {
@@ -205,12 +235,14 @@ void changeMode() {
     case GLOW: modeTimer = GLOW_TIME; break;
     case TEXT: modeTimer = TEXT_TIME; break;
     case LIT: modeTimer = CLOCK_TIME; break;
-    case 8: modeTimer = RAIN_TIME; break;
-    case 9: modeTimer = RAIN_TIME; break;
-    case 10: modeTimer = WALKING_TIME; break;
-    case 11: modeTimer = SNAKE_TIME; break;
-    case 12: modeTimer = SHOOTER_TIME; break;
-    case 13: modeTimer = TUNNEL_TIME; break;
+    case SINUS_FILL: modeTimer = RAIN_TIME; break;
+    case SINUS_THIN: modeTimer = RAIN_TIME; break;
+    case WALKING: modeTimer = WALKING_TIME; break;
+    case SNAKE: modeTimer = SNAKE_TIME; break;
+    case SHOOTER: modeTimer = SHOOTER_TIME; break;
+    case TUNNEL: modeTimer = TUNNEL_TIME; break;
+    case SINUS_WAVE_FILL: modeTimer = SINUS_WAVE_FILL_TIME; break;
+    case SINUS_WAVE_THIN: modeTimer = SINUS_WAVE_THIN_TIME; break;
   }
 }
 
@@ -645,11 +677,11 @@ void sinusFill() {
     timer = 0;
     clearCube();
     if (++pos > 10) pos = 0;
-    for (uint8_t i = 0; i < 8; i++) {
-      for (uint8_t j = 0; j < 8; j++) {
-        int8_t sinZ = 4 + ((float)sin((float)(i + pos) / 2) * 2);
-        for (uint8_t y = 0; y < sinZ; y++) {
-          setVoxel(i, y, j);
+    for (uint8_t x = 0; x < 8; x++) {
+      int8_t sinY = 4 + ((float)sin((float)(x + pos) / 2) * 2);
+      for (uint8_t z = 0; z < 8; z++) {
+        for (uint8_t y = 0; y < sinY; y++) {
+          setVoxel(x, y, z);
         }
       }
     }
@@ -666,10 +698,52 @@ void sinusThin() {
     timer = 0;
     clearCube();
     if (++pos > 10) pos = 0;
-    for (uint8_t i = 0; i < 8; i++) {
-      for (uint8_t j = 0; j < 8; j++) {
-        int8_t sinZ = 4 + ((float)sin((float)(i + pos) / 2) * 2);
-        setVoxel(i, sinZ, j);
+    for (uint8_t x = 0; x < 8; x++) {
+      int8_t sinY = 4 + ((float)sin((float)(x + pos) / 2) * 2);
+      for (uint8_t z = 0; z < 8; z++) {
+        setVoxel(x, sinY, z);
+      }
+    }
+  }
+}
+
+void sinusWaveFill() {
+  if (loading) {
+    clearCube();
+    loading = false;
+  }
+  timer++;
+  int8_t sinY;
+  if (timer > modeTimer) {
+    timer = 0;
+    clearCube();
+    if (++pos > 11) pos = 0;
+    for (uint8_t x = 0; x < 8; x++) {
+      for (uint8_t z = 0; z < 8; z++) {
+        sinY = sin_wave_cache_cube[pos][x][z];
+        for (uint8_t y = 0; y < sinY; y++) {
+          setVoxel(x, y, z);
+        }
+      }
+    }
+  }
+}
+
+void sinusWaveThin() {
+  if (loading) {
+    clearCube();
+    loading = false;
+  }
+  timer++;
+  int8_t sinY;
+  if (timer > modeTimer) {
+    timer = 0;
+    clearCube();
+    if (++pos > 11) pos = 0;
+    for (uint8_t x = 0; x < 8; x++) {
+      for (uint8_t z = 0; z < 8; z++) {
+        sinY = sin_wave_cache_cube[pos][x][z];
+        setVoxel(x, sinY, z);
       }
     }
   }
